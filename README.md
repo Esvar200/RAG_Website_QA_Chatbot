@@ -1,6 +1,6 @@
-# RAG_Website_QA_Chatbot
+# RAG Website_QA_Chatbot
 
-**RAG_Website_QA_Chatbot** is a powerful tool designed to extract information from a user-provided website, store it in a Chroma DB, and answer queries using a Retrieval-Augmented Generation (RAG) approach with Google's Gemini API. The application is built with Streamlit, providing an easy-to-use interface for interacting with the chatbot.
+**RAG Website_QA_Chatbot** is a powerful tool designed to extract information from a user-provided website, store it in a Chroma DB, and answer queries using a Retrieval-Augmented Generation (RAG) approach with Google's Gemini API. The application is built with Streamlit, providing an easy-to-use interface for interacting with the chatbot.
 
 ## Key Features
 
@@ -50,9 +50,4 @@
 ## Contributing
 
 Contributions are welcome! Please fork this repository and submit a pull request for any feature enhancements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License.
-
 ---
