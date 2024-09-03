@@ -20,7 +20,7 @@
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/RAG_Website_QA_Chatbot.git
+    git clone https://github.com/Esvar200/RAG_Website_QA_Chatbot.git
     cd RAG_Website_QA_Chatbot
     ```
 
