@@ -1,1 +1,1 @@
-!pip install langchain langchain_community streamlit google-generativeai langchain-google-genai
+!pip install langchain langchain_community streamlit google-generativeai langchain-google-genai requests
