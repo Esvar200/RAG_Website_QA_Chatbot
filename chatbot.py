@@ -8,22 +8,20 @@ from langchain.schema.runnable import RunnablePassthrough
 from langchain.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
-import streamlit as st
+import requests
 
-import google.generativeai as genai
-GOOGLE_API_KEY='YOUR_API_HERE'
+
+import google.generativeai as genai# Or use `os.getenv('GOOGLE_API_KEY')` to fetch an environment variable.
+GOOGLE_API_KEY="YOUR API KEY"
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
 def chatbot(user_input1,user_input2):    
-    loader = WebBaseLoader(user_input1)
-    docs = loader.load()
-    # Extract the text from the website data document
-    text_content = docs[0].page_content
+    loader= requests.get(user_input1)
+    txt=loader.text
 
     # Convert the text to LangChain's `Document` format
-    docs =  [Document(page_content=text_content, metadata={"source": "local"})]
-
+    docs =  [Document(page_content=txt, metadata={"source": "local"})]
 
     gemini_embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key=GOOGLE_API_KEY)
     # Save to disk
@@ -32,24 +30,32 @@ def chatbot(user_input1,user_input2):
                         embedding=gemini_embeddings,    # Embedding model
                         persist_directory="./chroma_db" # Directory to save data
                         )
-
+    vectorstore.persist()
     # Load from disk
     vectorstore_disk = Chroma(
                             persist_directory="./chroma_db",       # Directory of db
                             embedding_function=gemini_embeddings   # Embedding model
                     )
-
+    # Get the Retriever interface for the store to use later.
+    # When an unstructured query is given to a retriever it will return documents.
+    # Read more about retrievers in the following link.
+    # https://python.langchain.com/docs/modules/data_connection/retrievers/
+    #
+    # Since only 1 document is stored in the Chroma vector store, search_kwargs `k`
+    # is set to 1 to decrease the `k` value of chroma's similarity search from 4 to
+    # 1. If you don't pass this value, you will get a warning.
     retriever = vectorstore_disk.as_retriever(search_kwargs={"k": 1})
 
 
-    llm = ChatGoogleGenerativeAI(model="gemini-pro",
-                    temperature=0.7, top_p=0.85,google_api_key=GOOGLE_API_KEY)
+    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash-latest",
+                    temperature=0.3, top_p=0.85,google_api_key=GOOGLE_API_KEY)
 
     # Prompt template to query Gemini
     llm_prompt_template = """You are an assistant for question-answering tasks.
     Use the following context to answer the question.
     If you don't know the answer, just say that you don't know.
-    Use five sentences maximum and keep the answer concise.\n
+    Use five sentences maximum and keep the answer concise.
+    Provide answer in a neat format if it has points.\n
     Question: {question} \nContext: {context} \nAnswer:"""
 
     llm_prompt = PromptTemplate.from_template(llm_prompt_template)
