@@ -1,6 +1,6 @@
 import streamlit as st 
 from chatbot import chatbot
-st.title("Simple Chatbot App")
+st.title("Question Answwering Bot")
 
 # Get user input
 user_input1 = st.text_input("Enter your URL:", "")
