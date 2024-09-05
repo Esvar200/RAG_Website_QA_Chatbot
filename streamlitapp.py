@@ -5,7 +5,7 @@ st.title("Question Answering Bot")
 # Get user input
 user_input1 = st.text_input("Enter your URL:", "")
 user_input2 = st.text_input("Enter the question :", "")
-
+st.secrets["GOOGLE_API_KEY"]
     # Check if the user has submitted the inputs
 if st.button("Submit"):
         # Concatenate the user inputs and get chatbot response
