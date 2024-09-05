@@ -9,10 +9,10 @@ from langchain.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
 import requests
-
-from streamlitapp import GOOGLE_API_KEY
+import streamlit as st
+#from streamlitapp import GOOGLE_API_KEY
 import google.generativeai as genai# Or use `os.getenv('GOOGLE_API_KEY')` to fetch an environment variable.
-GOOGLE_API_KEY=GOOGLE_API_KEY
+GOOGLE_API_KEY=st.secrets["GOOGLE_API_KEY"]
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
