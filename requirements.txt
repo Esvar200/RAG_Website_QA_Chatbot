@@ -5,3 +5,4 @@ google-generativeai
 langchain-google-genai 
 requests
 chromadb
+pysqlite == 2.8.3
