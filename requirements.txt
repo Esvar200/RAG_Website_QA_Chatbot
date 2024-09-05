@@ -4,3 +4,4 @@ streamlit
 google-generativeai 
 langchain-google-genai 
 requests
+chromadb
