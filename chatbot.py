@@ -1,11 +1,10 @@
 from langchain import PromptTemplate
 from langchain import hub
 from langchain.docstore.document import Document
-from langchain.document_loaders import WebBaseLoader
 from langchain.schema import StrOutputParser
 from langchain.schema.prompt_template import format_document
 from langchain.schema.runnable import RunnablePassthrough
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
 import requests
