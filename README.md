@@ -36,7 +36,7 @@
 
 4. **Run the Streamlit Interface**:
     ```bash
-    python streamlit.py
+    streamlit run streamlit.py
     ```
 
 5. **Access the Web Interface**:
