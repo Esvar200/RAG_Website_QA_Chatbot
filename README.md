@@ -47,15 +47,6 @@
 - **`chatbot.py`**: Handles the backend logic, including parsing website content and storing it in Chroma DB.
 - **`streamlit.py`**: Manages the front-end interface, allowing users to interact with the chatbot through a web page.
 
-## Live Demo
-
-You can access the live version of the project here:
-
-[Live Demo](https://ragwebsite.streamlit.app/)
-
-Click the link to explore the functionality of the project in real-time. Feel free to test the features and interact with the application.
-
-Sharing the working of the 
 ## Contributing
 
 Contributions are welcome! Please fork this repository and submit a pull request for any feature enhancements or bug fixes.
