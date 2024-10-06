@@ -1,19 +1,19 @@
 # RAG Website_QA_Chatbot
 
-**RAG Website_QA_Chatbot** is a powerful tool designed to extract information from a user-provided website, store it in a Chroma DB, and answer queries using a Retrieval-Augmented Generation (RAG) approach with Google's Gemini API. The application is built with Streamlit, providing an easy-to-use interface for interacting with the chatbot.
+**RAG Website_QA_Chatbot** is a powerful tool designed to extract information from a user-provided website, store it in a Mongo DB, and answer queries using a Retrieval-Augmented Generation (RAG) approach with Google's Gemini API. The application is built with Streamlit, providing an easy-to-use interface for interacting with the chatbot.
 
 ## Key Features
 
 - **Website Content Parsing**: Extracts and processes content from any website provided by the user using Langchain.
 - **RAG-Based Query Answering**: Utilizes Google's Gemini API for a RAG approach to generate accurate and context-aware answers.
-- **Chroma DB**: Efficiently stores and retrieves parsed content for quick response times.
+- **Mongo DB**: Efficiently stores and retrieves parsed content for quick response times.
 - **Streamlit Integration**: Provides a user-friendly web interface to interact with the chatbot.
 
 ## Technologies Used
 
 - **Langchain**: For parsing and processing web content.
 - **Google's Gemini API**: Implements a RAG-based approach for answering user queries.
-- **Chroma DB**: A powerful vector database for storing and retrieving parsed data.
+- **Mongo DB**: A powerful vector database for storing and retrieving parsed data.
 - **Streamlit**: Creates a simple, interactive web interface for user interactions.
 
 ## How to Run the Project
@@ -41,6 +41,10 @@
 
 5. **Access the Web Interface**:
    - After running `streamlit.py`, open your web browser and go to `http://localhost:8501` to start interacting with the chatbot.
+
+## Live Demo
+
+You can try the project live here: [Live Demo](https://rag-app-live.streamlit.app/)
 
 ## File Structure
 
