@@ -44,7 +44,7 @@
 
 ## Live Demo
 
-You can try the project live here: [Live Demo](https://rag-app-live.streamlit.app/)
+You can try the project live here: [Live Demo](https://perkragbot.streamlit.app/)
 
 ## File Structure
 
